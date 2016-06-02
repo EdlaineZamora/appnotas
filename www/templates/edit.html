@@ -2,17 +2,37 @@
 	<ion-content>
 		<div class="list card">
 			<div class="item item-input">
-				<input type="text" placeholder="Título"
-					ng-model="note.title">
+				<input type="text" 
+					   placeholder="Título"
+					   ng-model="note.title">
 			</div>
 			<div class="item item-input">
-				<textarea rows="5" placeholder="Descrição"
-					ng-model="note.description"></textarea>
+				<textarea rows="5" 
+						  placeholder="Descrição"
+						  ng-model="note.description"></textarea>
+			</div>
+			<div>
+				<img src="{{note.picture}}" style="width: 200px;"/>
+			</div>
+			<div>
+				<button class="button button-assertive icon-left ion-compose"
+						ng-click="deletePicture()"
+						ng-show="pictureUrl">
+					Excluir
+				</button>
 			</div>
 		</div>
 		<div class="padding">
 			<button class="button button-block button-positive"
-				ng-click="save()">Salvar</button>
+					ng-click="takePicture()">
+				Foto
+			</button>
+		</div>
+		<div class="padding">
+			<button class="button button-block button-balanced"
+					ng-click="save()">
+				Salvar
+			</button>
 		</div>
 	</ion-content>
 </ion-view>
